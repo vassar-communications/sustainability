@@ -1,0 +1,79 @@
+.u-lMain a
+{
+    border-bottom: solid .05em $linkColor;
+    color: $linkColor;
+    padding: 0 .125em .025em;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+}
+
+.u-lMain a:visited
+{
+    border-bottom-color: $linkColorVisited;
+    border-radius: 0;
+    color: $linkColorVisited;
+}
+
+.u-lMain a:hover
+{
+    background-color: $linkColorHoverBackground;
+    border-radius: .125em;
+    color: $linkColorHover;
+    text-decoration: none;
+}
+
+.u-lMain a:hover:visited
+{
+    background-color: $linkColorVisitedHoverBackground;
+    border-radius: .125em;
+    color: $linkColorHover;
+}
+
+.u-lMain a:active
+{
+    background-color: $linkColorActiveBackground;
+    border-radius: .125em;
+    color: $linkColorHover;
+}
+
+abbr
+{
+    text-decoration: none;
+    font-size: .9em;
+}
+
+abbr[title]
+{
+    border-bottom: dotted .075em hsla( 0, 0%, 50%, .75 );
+    cursor: help;
+    padding-bottom: .05em;
+    padding-bottom: 0;
+}
+
+@supports 
+(text-decoration-skip-ink: auto) or
+(-webkit-text-decoration-skip-ink: auto) or
+(text-decoration-skip: auto) or
+(-webkit-text-decoration-skip: auto)
+{
+    abbr[title]
+    {
+        border-bottom: 0;    
+        text-decoration: underline dotted hsla( 0, 0%, 50%, .75 );
+    }
+
+    .u-lMain a
+    {
+        border-bottom: 0 !important;
+        -webkit-text-decoration: underline; 
+        text-decoration: underline;
+        -webkit-text-decoration-skip: auto; 
+        text-decoration-skip: auto;
+    }
+
+    .u-lMain a:visited
+    {
+        -webkit-text-decoration: underline; 
+        text-decoration: underline;
+    }  
+}

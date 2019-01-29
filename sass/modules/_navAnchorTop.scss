@@ -1,0 +1,37 @@
+@media screen
+{    
+    .ac-NavAnchor--top
+    {
+        opacity: .9;
+    }
+    
+    .ac-NavAnchor--top:before
+    {
+        border: solid .033em #fff;
+        bottom: 0;
+        content: "";
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;        
+    }
+
+    .ac-NavAnchor--top:focus,
+    .ac-NavAnchor--top:hover
+    {
+        color: #333;
+        opacity: 1;
+    }
+
+    .ac-NavAnchor--top:focus:before,
+    .ac-NavAnchor--top:hover:before
+    {
+        border-color: #333;
+    }
+    
+    .ac-NavAnchor--top:focus path,
+    .ac-NavAnchor--top:hover path
+    {
+        fill: #333 !important;
+    }
+}

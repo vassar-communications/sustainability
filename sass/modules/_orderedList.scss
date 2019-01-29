@@ -1,0 +1,27 @@
+@media screen
+{    
+    .orderedList
+    {
+        counter-reset: item;
+        list-style: none;
+    }
+        
+    .orderedList>li:before
+    {
+        color: #746661;
+        color: $titleColor;
+        content: counter(item) ".";
+        counter-increment: item;
+        font-family: acumin-pro-extra-condensed, "Helvetica Neue", "Arial Narrow", Helvetica, Arial;
+        font-size: 1.75em;
+        line-height: 1.35;
+        margin-left: -.66em;
+        position: absolute;
+    }
+    
+    .orderedList ul
+    {
+        padding-left: 0;
+        padding-right: 0;
+    }   
+}

@@ -1,0 +1,84 @@
+
+@import "mixins";
+@import "config";
+
+@import "modules/variables";
+//@import "modules/debug";
+
+/* TYPOGRAPHY */
+@import "modules/links";
+@import "modules/typography";
+/* TYPOGRAPHY */
+
+
+/* LAYOUT */
+@import "modules/button";
+@import "modules/contact";
+@import "modules/footer";
+@import "modules/fullPageWidthNav";
+@import "modules/masthead";
+@import "modules/module";
+@import "modules/navAnchorTop";
+@import "modules/navigation";
+@import "modules/orderedList";
+//@import "modules/socialIcons";
+
+@media screen
+{    
+    .center
+    {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .u-lHeader
+    {
+        background: #fff url(/sustainability/assets/images/solar-panels-main.jpg) no-repeat top;            
+        background-size: cover;
+        border-bottom: solid .5em $titleColor;
+        margin-bottom: 0;
+        margin-top: 0;
+        padding: 20% 5% 0 !important;
+    }
+
+    .u-folderGet-involved .u-lHeader
+    {
+        background-image: url(/sustainability/assets/images/planting-trees.jpg);
+    }
+    
+    .u-folderWhat-weve-done .u-lHeader
+    {
+        background-image: url(/sustainability/assets/images/hydro.jpg);
+    }
+    
+    .u-folderClimate-action-plan .u-lHeader
+    {
+        background-image: url(/sustainability/assets/images/tree.jpg);
+    }
+    
+    .u-folderCampus-support-systems .u-lHeader
+    {
+        background-image: url(/sustainability/assets/images/vassar-bikes.jpg);
+    }
+    
+    .u-lHeader,
+    .u-lMain
+    {
+        max-width: none;
+    }
+}
+
+@media screen and (min-width: $medium)
+{   
+    .Chart--emissions
+    {
+        //width: 75%;   
+    }    
+}
+/* LAYOUT */
+
+
+/* COLOR */
+@import "modules/color";
+/* COLOR */

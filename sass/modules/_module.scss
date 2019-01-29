@@ -1,0 +1,170 @@
+@media screen
+{
+    .Module__fullWidthBleed .Module__desc,
+    .Module__fullWidthBleed .Module__list
+    {
+        overflow: visible;
+    }
+
+    .Module__fullWidthBleed .Module__list
+    {
+        margin: 0 7.5%;
+        padding-left: 2%;
+    }
+
+    .Module--mainContent
+    {
+        margin-bottom: 2em !important;
+    }
+    
+    .Module__desc h3
+    {
+        color: #746661;
+        color: $titleColor;
+        font-size: 2em;
+        padding-top: 0;
+    }
+    
+    .Module__desc ol
+    {
+        padding-left: 0;
+    }
+    
+    .Module__desc p:last-child
+    {
+        margin-bottom: 0;
+    }
+    
+    .Module__desc ul
+    {
+        list-style: circle;
+        list-style-type: circle;
+        padding: 0 1.2em .5em;
+    }
+
+    .Module__desc>ul
+    {
+        padding: 0;
+    }
+
+    .Module__desc__image--half
+    {
+        width: 50%;
+    }
+
+    .Module__desc__image--halfBlock,
+    .Module__desc__image--threeQuartersBlock
+    {
+        display: block;
+        float: none;
+        margin: 1.5em 0;
+        width: 100% !important;
+    }
+
+    .Module__desc__image--quarter
+    {
+        width: 25%;
+    }
+
+    .Module__desc__image--threeQuarters
+    {
+        width: 75%;
+    }
+
+    .Module__desc__image--threeQuartersWaste
+    {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .Module__desc__image--full
+    {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100% !important;
+    }
+
+    .Module__desc__image--full img,
+    .Module__desc__image--halfBlock img
+    {
+        width: 100%;    
+    }
+    
+    .u-lMain .Module__desc__imageContainer figcaption
+    {
+        color: #888;
+        font-size: .9em;
+        margin-top: .33em;
+    }
+    
+    .u-lMain .Module__desc__imageContainer:focus,
+    .u-lMain .Module__desc__imageContainer:hover
+    {
+        background-color: transparent;
+        border-bottom: 0;
+    }
+    
+    .Module__desc__imageContainer
+    {
+        border-bottom: 0;
+        float: right;
+        margin: .33em 0 2em 2em;
+        padding: 0;
+        position: relative;
+        width: 100%;
+    }
+    
+    .Module__title
+    {
+        color: #746661;
+        color: $titleColor;
+        hyphens: none;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: $small)
+{    
+    .Module__desc__image--halfBlock
+    {
+        width: 50% !important;
+    }
+
+    .Module__desc__image--threeQuartersBlock
+    {
+        float: none;
+        width: 75% !important;
+    }
+    
+    .vassar-seed-logo
+    {
+        margin-left: 0;    
+    }
+    
+    .Module__desc__image--threeQuartersWaste
+    {
+        width: 66% !important;
+    }
+
+    .Module__desc__imageContainer
+    {
+        width: 35%;
+    }
+}
+
+@media screen and (min-width: $medium)
+{
+    .Module__fullWidthBleed .Module__list
+    {
+        padding-left: auto;
+    }    
+}
+
+@media screen and (min-width: 55em)
+{
+    .Module__fullWidthBleed .Module__list
+    {
+        margin: 0 auto;
+        max-width: 40em;
+    }
+}

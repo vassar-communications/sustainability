@@ -1,0 +1,220 @@
+
+$min_width: 55;
+$max_width: 90;
+
+$min_font: 1;
+$max_font: 1.25; 
+
+$maxMQ: 90;
+$minMQ: 0;
+$minLineHeight: 1.3;
+$maxLineHeight: 1.5;
+
+/*
+abbr,
+.numbers
+{
+    letter-spacing: .01em;
+}
+
+abbr
+{
+    font-feature-settings: "kern", "liga", "clig", "calt", "c2sc", "smcp";
+}
+
+@supports (font-variant-caps: all-small-caps)
+{
+    abbr
+    {
+        font-size: 1.1em;
+        font-variant-caps: all-small-caps;
+        line-height: 1;
+    }
+}
+*/
+
+/**
+ * ROOT
+ */
+.u-lMain
+{
+    color: #000;
+    font: 100%/1.3 acumin-pro, "Helvetica Neue", Helvetica, Arial;
+    font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
+}
+
+p,
+.u-lMain .Module__desc,
+.u-lContent
+{
+    line-height: 1.3;
+}
+
+@supports (font-kerning: normal) and 
+    (font-variant-ligatures: common-ligatures contextual) and
+    (font-variant-numeric: oldstyle-nums proportional-nums)
+{
+.u-lMain
+    {
+        font-kerning: normal;
+        font-variant-ligatures: common-ligatures contextual;
+        font-variant-numeric: oldstyle-nums proportional-nums;
+        font-feature-settings: normal;
+    }
+}
+
+/**
+ * ATTRIBUTES
+ */
+[href^="mailto:"]
+{
+    hyphens: none;
+}
+
+/**
+ * ELEMENTS
+ */
+dt
+{
+    font-weight: 400;
+}
+
+dd
+{
+    margin-left: 0;
+    margin-bottom: .5em;
+}
+
+h4
+{
+    font-size: 1em;
+    font-weight: bold;
+}
+
+h5
+{
+    font-family: acumin-pro, Arial, Helvetica;
+    text-transform: none;
+}
+
+h4,
+h5
+{
+    margin-top: 0 !important;
+    margin-bottom: .75em !important;
+    padding-top: .8em !important;
+}
+
+/* adjust for FOUT */
+h1,
+h2,
+h3,
+h4,
+h6,
+.Module--mainContent:not(.Module__fullWidthPageNav) .Module__title,
+.u-Masthead__siteName--link,
+.u-pageTitle
+{
+    font-family: "Arial Narrow";
+    text-transform: none;
+}
+
+.wf-active h1,
+.wf-active h2,
+.wf-active h3,
+.wf-active h4,
+.wf-active h5,
+.wf-active h6,
+.wf-active .Module--mainContent:not(.Module__fullWidthPageNav) .Module__title,
+.wf-active .u-Masthead__siteName--link,
+.wf-active .u-pageTitle
+{
+    font-family: acumin-pro-extra-condensed,"Arial Narrow";
+    letter-spacing: normal;
+    //text-transform: uppercase;
+}
+
+.wf-active h4
+{
+    font-family: acumin-pro, Helvetica, Arial;    
+}
+/* adjust for FOUT */
+
+li 
+{
+    margin-bottom: .5em;
+}
+
+strong
+{
+    font-weight: 400;
+}
+
+.Module--sidebar dl.Module__listItem
+{
+    padding-bottom: 0;
+    padding-top: .1em;    
+}
+
+.Module__desc h3
+{
+    text-transform: none;
+}
+
+.u-lMain
+{
+    //font-size: 1em;
+    hyphens: auto;
+}
+
+.u-pageTitle
+{
+    display: block;
+    border-bottom: solid .0125em;
+    color: #746661;
+    color: $titleColor;
+    font-size: 4em;
+    hyphens: none;
+    line-height: .85;
+    margin: .4em 5% .2em;
+    padding-bottom: .125em;
+    text-align: center;
+    visibility: visible;
+}
+
+/*
+ * Fluid text sizing
+ */
+@media (min-width: #{$min_width}em) and (max-width: #{$max_width}em)
+{
+    .u-lMain
+    {
+        font-size: calc(#{$min_font}em + (#{$max_font} - #{$min_font}) * ( (100vw - #{$min_width}em) / ( #{$max_width} - #{$min_width})));
+    }
+}
+
+@media (min-width: #{$max_width}em)
+{
+    .u-lMain
+    { 
+        font-size: #{$max_font}em !important;
+    }
+    
+    p,
+    .u-lMain,
+    .u-lMain .Module__desc
+    {
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: #{$max_width}em)
+{
+    .u-lMain,
+    p,
+    .Module__desc,
+    .u-lContent
+    {
+        line-height: calc(#{$minLineHeight}em + (#{$maxLineHeight} - #{$minLineHeight}) * ((100vw - #{$minMQ}em)/(#{$maxMQ} - #{$minMQ}))) !important;
+    }
+}
