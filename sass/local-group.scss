@@ -1,84 +1,325 @@
+@import "_config";
 
-@import "mixins";
-@import "config";
+/* Local */
 
-@import "modules/variables";
-//@import "modules/debug";
-
-/* TYPOGRAPHY */
-@import "modules/links";
-@import "modules/typography";
-/* TYPOGRAPHY */
-
-
-/* LAYOUT */
-@import "modules/button";
-@import "modules/contact";
-@import "modules/footer";
-@import "modules/fullPageWidthNav";
-@import "modules/masthead";
-@import "modules/module";
-@import "modules/navAnchorTop";
-@import "modules/navigation";
-@import "modules/orderedList";
-//@import "modules/socialIcons";
-
-@media screen
-{    
-    .center
-    {
-        float: none;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .u-lHeader
-    {
-        background: #fff url(/sustainability/assets/images/solar-panels-main.jpg) no-repeat top;            
-        background-size: cover;
-        border-bottom: solid .5em $titleColor;
-        margin-bottom: 0;
-        margin-top: 0;
-        padding: 20% 5% 0 !important;
-    }
-
-    .u-folderGet-involved .u-lHeader
-    {
-        background-image: url(/sustainability/assets/images/planting-trees.jpg);
-    }
-    
-    .u-folderWhat-weve-done .u-lHeader
-    {
-        background-image: url(/sustainability/assets/images/hydro.jpg);
-    }
-    
-    .u-folderClimate-action-plan .u-lHeader
-    {
-        background-image: url(/sustainability/assets/images/tree.jpg);
-    }
-    
-    .u-folderCampus-support-systems .u-lHeader
-    {
-        background-image: url(/sustainability/assets/images/vassar-bikes.jpg);
-    }
-    
-    .u-lHeader,
-    .u-lMain
-    {
-        max-width: none;
-    }
+.GridContainer {
+  padding-left: 0;
+  padding-right: 0;
+}
+.GridContainer .Row {
+  max-width: none;
+}
+.ImageGrid .Module__desc {
+  background-color: #000;
+  color: #fff;
+  font-size: .8em;
+  height: 100%;
+  padding: .6em;
+  width: 100%;
+}
+.ImageGrid .Module__image {
+  display: block;
+  line-height: 0;
+}
+.ImageGrid .Module__link {
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  justify-content: center;
+  text-decoration: none !important;
+}
+.ImageGrid .Module__listItem {
+  background-position: center;
+  background-size: cover;
+  transition: .2s transform ease;
+}
+.ImageGrid .Module__listItem:focus, .ImageGrid .Module__listItem:hover {
+  position: relative;
+  transform: scale(1.025);
+  z-index: 1;
+}
+.ImageGrid .Module__list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0 !important
+}
+@media screen and (min-width: 56.25em) {
+  .ImageGrid .Module__list {
+    flex-wrap: nowrap
+  }
+}
+.ImageGrid--feature .Module__desc, .ImageGrid--feature .Module__title {
+  color: #fefefe;
+  padding: .25em 2.5%;
+  z-index: 2
+}
+.ImageGrid--feature .Module__desc {
+  background-color: transparent;
+  height: auto
+}
+.ImageGrid--feature .Module__desc p {
+  margin-bottom: 0
+}
+.ImageGrid--feature .Module__link {
+  padding: 12.5%
+}
+.ImageGrid--feature .Module__link:after {
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.6);
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: background-color .2s
+}
+.ImageGrid--feature .Module__link:focus, .ImageGrid--feature .Module__link:hover {
+  background-color: transparent
+}
+.ImageGrid--feature .Module__link * {
+  transition: background-color .2s
+}
+.ImageGrid--feature .Module__list {
+  display: grid
+}
+@media screen and (min-width: 37.5em) {
+  .ImageGrid--feature .Module__list {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr
+  }
+}
+.ImageGrid--feature .Module__listItem {
+  position: relative
+}
+.ImageGrid--feature .Module__listItem:hover .Module__desc, .ImageGrid--feature .Module__listItem:hover .Module__title {
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.6)
+}
+.ImageGrid--feature .Module__link * {
+  transition: background-color .2s;
+}
+.ImageGrid--feature .Module__desc, .ImageGrid--feature .Module__title {
+  color: #fefefe !important;
+  padding: .25em 2.5%;
+  z-index: 2;
+}
+.ImageGrid--feature h2.Module__title, .feature-grid .Module__desc h2 {
+  font-family: $serif;
+  font-weight: $fontWeightRegular;
+  font-size: 3em;
+}
+.feature-grid a:hover h2 {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-left: .25em;
+  padding-right: .25em;
+}
+.feature-grid a:hover p {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-left: .25em;
+  padding-right: .25em;
+}
+.feature-grid .Module__image img, .feature-grid a:hover .Module__image img {
+  opacity: 0.4
+}
+.feature-grid a:hover h2, .feature-grid a:hover p {
+  opacity: 1;
+  z-index: 100
+}
+.feature-grid .Module__link {
+  overflow: hidden
+}
+.feature-grid .Module__list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.2em
+}
+.feature-grid .Module__listItem {
+  padding: 0.2em
+}
+@media screen and (min-width: 56.25em) {
+  .feature-grid .Module__listItem {
+    width: 50%
+  }
+}
+.feature-grid .Module__link {
+  background: #000;
+  border: none;
+  display: block;
+  position: relative
+}
+.feature-grid .Module__desc {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  align-items: center;
+  justify-content: center
+}
+.feature-grid .Module__desc h2 {
+  margin: 0
+}
+.feature-grid .Module__desc p {
+  font-size: 0.8em
+}
+@media screen and (min-width: 37.5em) {
+  .feature-grid .Module__desc p {
+    font-size: 1.06em
+  }
+}
+.feature-grid .Module__desc h2, .feature-grid .Module__desc p {
+  color: #fff !important;
+  transition: all 0.4s ease
+}
+.feature-grid .Module__desc p {
+  padding: 0 6%;
+  text-align: center
+}
+@media screen and (min-width: 37.5em) {
+  .feature-grid .Module__desc p {
+    padding: 0 15%
+  }
+}
+.feature-grid .Module__image img {
+  margin: 0;
+  opacity: 0.6;
+  position: relative;
+  transition: all 0.4s ease
+}
+.feature-grid a:hover .Module__image img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+  z-index: 99
+}
+.feature-grid a:hover h2 {
+  opacity: 0;
+  transform: translateY(-0.4em)
+}
+.feature-grid a:hover p {
+  opacity: 0;
+  transform: translateY(0.8em)
+}
+.feature-grid .Module__desc h2, .feature-grid .Module__desc p, .grid-campusInitiatives .Module__desc h2, .grid-campusInitiatives .Module__desc p {
+  color: #eee !important
+}
+.feature-grid a:hover h2, .grid-campusInitiatives a:hover h2 {
+  transform: translateY(-.1em)
+}
+.feature-grid a:hover p, .grid-campusInitiatives a:hover p {
+  transform: translateY(.2em)
+}
+.feature-grid .Module__desc {
+  display: flex !important;
+}
+.feature-grid .Module__desc h2 {
+  font-family: "acumin-pro-extra-condensed", "Arial Narrow", "Helvetica Condensed";
+  font-weight: 300;
+  text-align: center;
+}
+.feature-grid .Module__desc h2, .feature-grid .Module__desc p, .grid-campusInitiatives .Module__desc h2, .grid-campusInitiatives .Module__desc p {
+  color: #eee !important
+}
+.feature-grid a:hover h2, .grid-campusInitiatives a:hover h2 {
+  transform: translateY(-.1em)
+}
+.feature-grid a:hover p, .grid-campusInitiatives a:hover p {
+  transform: translateY(.2em)
+}
+.feature-grid a.Module__link {
+  text-decoration: none;
+}
+.grid-campusInitiatives a:hover h2, .grid-campusInitiatives a:hover p {
+  opacity: 1
+}
+.grid-campusInitiatives .Module__desc {
+  padding: 1em 5%;
+  position: inherit
+}
+.grid-campusInitiatives .Module__desc h2 {
+  padding-bottom: 0.25em !important
+}
+.grid-campusInitiatives .Module__desc p {
+  padding: 0;
+  text-align: left
+}
+.grid-campusInitiatives .Module__image {
+  display: none;
+  visibility: hidden
+}
+.grid-campusInitiatives .Module__link:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0.4;
+  transition: all 0.17s ease-in-out
+}
+.grid-campusInitiatives .Module__link:hover:before {
+  transform: scale(1.1);
+  opacity: 0.4;
+}
+.grid-campusInitiatives .Module__listItem {
+  width: 100%
+}
+.grid-campusInitiatives .Module__listItem:nth-child(1) .Module__link:before {
+  background: #000 url("../images/headers/ecological-preserve-vassar-0127-13-09-ea-1700.jpg") 26% 9%
+}
+.grid-campusInitiatives .Module__listItem:nth-child(2) .Module__link:before {
+  background: #000 url("../images/headers/barn-solar-panels-vassar-0123-18-09-kr-2518.jpg") 80% 60%
+}
+.grid-campusInitiatives .Module__listItem:nth-child(3) .Module__link:before {
+  background: #000 url("../images/headers/indoor-farmers-market-vassar-0117-12-11-alc-1_.jpg") 63% 40%
+}
+.grid-campusInitiatives .Module__listItem:nth-child(4) .Module__link:before {
+  background: #000 url("../images/headers/bike-and-dyi-repair-shop-vassar-0149-17-10-kr-9756.jpg") 56% 20%
+}
+.grid-campusInitiatives .Module__listItem:nth-child(5) .Module__link:before {
+  background: #000 url("../images/headers/library-quad-vassar-0056-13-05-tt-0893.jpg") 51% 39%
+}
+.grid-campusInitiatives .Module__listItem:nth-child(6) .Module__link:before {
+  background: #000 url("../images/headers/0205-18-11-jha-sustainability-vassar-img_6763.jpg") 40% 52%
 }
 
-@media screen and (min-width: $medium)
-{   
-    .Chart--emissions
-    {
-        //width: 75%;   
-    }    
+
+
+.grid-campusInitiatives .Module__desc {
+  padding: 1.5em 5% 1.6em 5%;
+  position: inherit;
 }
-/* LAYOUT */
+.grid-campusInitiatives .Module__link:hover:before {
+  opacity: 1;
+}
 
+.Module__list, .Module__list ul, .Module__subList, .Module__listItem {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* Headers */
 
-/* COLOR */
-@import "modules/color";
-/* COLOR */
+.u-lHeader {
+  background: #fff url(../images/solar-panels-main.jpg) no-repeat top;
+  background-size: cover;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 20% 5% 0 !important;
+}
+.u-folderGet-involved .u-lHeader {
+  background-image: url(../images/planting-trees.jpg);
+}
+.u-folderWhat-weve-done .u-lHeader {
+  background-image: url(../images/hydro.jpg);
+}
+.u-folderClimate-action-plan .u-lHeader {
+  background-image: url(../images/tree.jpg);
+}
+.u-folderCampus-support-systems .u-lHeader {
+  background-image: url(../images/vassar-bikes.jpg);
+}
