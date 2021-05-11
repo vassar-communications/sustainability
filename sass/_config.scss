@@ -77,8 +77,48 @@ $uniqueButtonLinkColorActive: #ccc;
 $u-ArticleList__systemMessage--font: $fontWeightRegular 1.1em/1.2 $serif;
 $u-ArticleList__systemMessage--color: #400;
 
-/* global */
+body {
+    /* overflow-x: hidden !important; */
+}
+.u-lMain:not(.PageNav) {
+  line-height: 100% !important;
+  font-size: 100% !important;
+}
+.u-lContent {
+    font-size: 100%;
+}
+.Row {
+    p {
+        font-size: 1.2em;
+        line-height: 1.4;
+    }
+    ul, ol {
+        font-size: 1.1em;
+    }
+}
 
+.u-lContent .Dark a:focus,
+.u-lContent .Dark a:hover,
+.u-lContent .Dark a:visited:focus,
+.u-lContent .Dark a:visited:hover,
+.u-lContent .Dark--scrim a:focus,
+.u-lContent .Dark--scrim a:hover,
+.u-lContent .Dark--scrim a:visited:focus,
+.u-lContent .Dark--scrim a:visited:hover,
+.u-lContent .Dark--bgScrim a:focus,
+.u-lContent .Dark--bgScrim a:hover,
+.u-lContent .Dark--bgScrim a:visited:focus,
+.u-lContent .Dark--bgScrim a:visited:hover {
+	color:$gray-dark !important;
+	text-decoration-color:$gray-dark !important;
+	background-color:$gray-light !important;
+}
+.u-lContent .Dark a:visited,
+.u-lContent .Dark--scrim a:visited,
+.u-lContent .Dark--bgScrim a:visited {
+	color:$gray-border !important;
+	text-decoration-color:$gray-border !important;
+}
 .title-gradient {
     color: $burgundy-2;
     text-transform: none;
@@ -106,8 +146,25 @@ $u-ArticleList__systemMessage--color: #400;
 }
 .PageNav {
     border: none;
+    margin: 0 auto 2em;
+    .Module__title {
+        font-size: 1em
+    }
+    .Module__link {
+        padding: .4em 0;
+    }
+}
+@media screen {
+    .PageNavContainer {
+        position: relative;
+        z-index: 0;
+    }
 }
 @media screen and (min-width: $tiny) {
+    .PageNavContainer {
+        position: sticky;
+        z-index: 1;
+    }
     .u-lHeader {
         margin-bottom: 2em;
     }
@@ -126,7 +183,6 @@ $u-ArticleList__systemMessage--color: #400;
    padding-top: 2em !important;
 }
 .u-lContent {
-	font-size:0.95em;
     a {
         &:focus,
         &:hover,
@@ -173,7 +229,8 @@ main.u-lMain .u-lContent {
 .bgSparkPatternMaroonWhite {
     border: 1px solid $gray-light;
     background-image: url(../../assets/images/Vassar_SparkPattern_maroon-white.png);
-    background-repeat: no-repeat;   
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 .bgQuadGrid-grey {
     background: #d4cfce url(../../assets/images/Vassar_QuadGrid-grey.png) repeat;
@@ -191,31 +248,4 @@ h3.u-ExtendedFooter__listHeader {
     font: $fontWeightBold 2em/1.1 $serif;
     text-transform: capitalize;
     letter-spacing: 0;
-}
-.u-lContent .Dark a:visited,
-.u-lContent .Dark--scrim a:visited,
-.u-lContent .Dark--bgScrim a:visited,
-.u-lContent .galleria-desc-container a:visited {
-	color:#a2a6ad !important;
-	text-decoration-color:#a2a6ad !important;
-}
-.u-lContent .Dark a:focus,
-.u-lContent .Dark a:hover,
-.u-lContent .Dark a:visited:focus,
-.u-lContent .Dark a:visited:hover,
-.u-lContent .Dark--scrim a:focus,
-.u-lContent .Dark--scrim a:hover,
-.u-lContent .Dark--scrim a:visited:focus,
-.u-lContent .Dark--scrim a:visited:hover,
-.u-lContent .Dark--bgScrim a:focus,
-.u-lContent .Dark--bgScrim a:hover,
-.u-lContent .Dark--bgScrim a:visited:focus,
-.u-lContent .Dark--bgScrim a:visited:hover,
-.u-lContent .galleria-desc-container a:focus,
-.u-lContent .galleria-desc-container a:hover,
-.u-lContent .galleria-desc-container a:visited:focus,
-.u-lContent .galleria-desc-container a:visited:hover{
-	color:#a2a6ad;
-	text-decoration-color:#a2a6ad;
-	background-color:#D0D0CE
 }

@@ -1,13 +1,94 @@
 @import "_config";
 
-/* Local */
-
+body {
+    align-items: stretch;
+    display: grid;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    grid-template-areas:
+        "kint-container"
+        "banner-covid19"
+        "global-masthead"
+        "global-navigation"
+        "header"
+        "site-navigation"
+        "navigation-secondary"
+        "main"
+        "footer";
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    justify-items: stretch;
+}
+@media screen and (max-width: 37.5em) {
+    body {
+        grid-template-areas:
+            "kint-container"
+            "global-masthead"
+            "banner-covid19"
+            "header"
+            "navigation-secondary"
+            "main"
+            "site-navigation"
+            "global-navigation"
+            "footer";
+    }
+}
+@media (min-width: 56.25em) {
+    .u-pageIndex.secondLevelNavSplit body {
+        align-items: stretch;
+        display: grid;
+        grid-column-gap: 0;
+        grid-row-gap: 0;
+        grid-template-areas:
+            "kint-container"
+            "banner-covid19"
+            "global-masthead"
+            "global-navigation"
+            "header"
+            "site-navigation"
+            "main"
+            "footer";
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        justify-items: stretch;
+    }
+    .Row {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 48rem !important;
+        width: 100% !important;
+    }
+}
+@media screen and (min-width: 56.25em) {
+    .secondLevelNavSplit .u-pageTitle {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+.u-Masthead__head {
+    margin-bottom: .2em;
+}
+.row-no-max-width .Row {
+    max-width: none;
+}
+.Row li {
+    line-height: 1.2;
+    margin-bottom: .25em;
+}
 .GridContainer {
   padding-left: 0;
   padding-right: 0;
 }
 .GridContainer .Row {
-  max-width: none;
+  max-width: none !important;
+}
+.homepage-features {
+    padding-bottom: 0 !important;
+}
+.u-lContent .intro {
+    font-size: 1.5em;
+    line-height: 1.3;
+    margin-top: 1em;
 }
 .ImageGrid .Module__desc {
   background-color: #000;
@@ -60,7 +141,8 @@
   height: auto
 }
 .ImageGrid--feature .Module__desc p {
-  margin-bottom: 0
+  margin-bottom: 0;
+    line-height: 1.4;
 }
 .ImageGrid--feature .Module__link {
   padding: 12.5%
@@ -83,7 +165,8 @@
   transition: background-color .2s
 }
 .ImageGrid--feature .Module__list {
-  display: grid
+    grid-gap: .5em;
+    display: grid
 }
 @media screen and (min-width: 37.5em) {
   .ImageGrid--feature .Module__list {
@@ -91,12 +174,20 @@
     grid-template-rows: 1fr 1fr
   }
 }
-.ImageGrid--feature .Module__listItem {
-  position: relative
+.ImageGrid--feature {
+    .Module__listItem {
+      position: relative
+    }
+    .Module__title {
+        margin-bottom: 0;
+        width: 100%;
+        line-height: 1;
+    }
 }
-.ImageGrid--feature .Module__listItem:hover .Module__desc, .ImageGrid--feature .Module__listItem:hover .Module__title {
+.ImageGrid--feature .Module__listItem:hover .Module__desc,
+.ImageGrid--feature .Module__listItem:hover .Module__title {
   background-color: #000;
-  background-color: rgba(0, 0, 0, 0.6)
+  background-color: rgba(0, 0, 0, 0.8)
 }
 .ImageGrid--feature .Module__link * {
   transition: background-color .2s;
@@ -218,17 +309,16 @@ font-size: 1.5em !important;
 .feature-grid .Module__desc h2, .feature-grid .Module__desc p, .grid-campusInitiatives .Module__desc h2, .grid-campusInitiatives .Module__desc p {
   color: #eee !important
 }
-.feature-grid a:hover h2, .grid-campusInitiatives a:hover h2 {
+.feature-grid a:hover h2 {
   transform: translateY(-.1em)
 }
-.feature-grid a:hover p, .grid-campusInitiatives a:hover p {
+.feature-grid a:hover p {
   transform: translateY(.2em)
 }
 .feature-grid .Module__desc {
   display: flex !important;
 }
 .feature-grid .Module__desc h2 {
-  /*font-family: $sans-serif;*/
   font-weight: $fontWeightMedium;
   text-align: center;
 }
@@ -240,11 +330,23 @@ font-size: 1.5em !important;
 .feature-grid .Module__desc h2, .feature-grid .Module__desc p, .grid-campusInitiatives .Module__desc h2, .grid-campusInitiatives .Module__desc p {
   color: #eee !important
 }
-.feature-grid a:hover h2, .grid-campusInitiatives a:hover h2 {
+.feature-grid a:hover h2 {
   transform: translateY(-.1em)
 }
-.feature-grid a:hover p, .grid-campusInitiatives a:hover p {
+.feature-grid a:hover p {
   transform: translateY(.2em)
+}
+.feature-grid.grid-campusInitiatives {
+    h2 {
+        width: 100%;
+        padding: .2em .2em 0;
+    }
+    a:hover h2 {
+      transform: translateY(0)
+    }
+    a:hover p {
+      transform: translateY(0)
+    }
 }
 .feature-grid a.Module__link {
   text-decoration: none;
@@ -260,7 +362,7 @@ font-size: 1.5em !important;
   padding-bottom: 0.25em 2.5em;
 }
 .grid-campusInitiatives .Module__desc p {
-  padding: 0;
+  padding: 0 .2em .2em;
   text-align: left
 }
 .grid-campusInitiatives .Module__image {
